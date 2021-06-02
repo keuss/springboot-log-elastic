@@ -1,0 +1,23 @@
+<configuration>
+    <springProfile name="default">
+        <appender name="classicConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <logger name="com.keuss.book.api" level="debug"/>
+        <root level="error">
+            <appender-ref ref="classicConsoleAppender"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        </appender>
+        <logger name="com.keuss.book.api" level="debug"/>
+        <root level="error">
+            <appender-ref ref="jsonConsoleAppender"/>
+        </root>
+    </springProfile>
+</configuration>
