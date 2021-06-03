@@ -4,6 +4,14 @@ springboot-log-elastic
 
 POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) (everything in docker)
 
+## Run
+
+ - git clone https://github.com/keuss/springboot-log-elastic
+ - `mvn clean package`
+ - `docker-compose build`
+ - `docker-compose up`
+ - To shutdown the stack and remove all persisted data `docker-compose down -v`
+
 ## Stack
 
  - Logback with [LogstashEncoder](https://github.com/logstash/logstash-logback-encoder)
@@ -13,7 +21,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 
 ## URLs
 
- - API Swagger to add data : http://localhost:8080/swagger-ui/index.html
+ - API Swagger to add data (create some books) : http://localhost:8080/swagger-ui/index.html
  - Kibana : http://localhost:5601/ (elastic/changeme), add sample data first, then create logback-* index
 
 ## Links
