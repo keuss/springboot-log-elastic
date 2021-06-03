@@ -35,4 +35,5 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - https://docs.docker.com/config/containers/logging/gelf/
  - https://stackoverflow.com/questions/44050803/unable-to-connect-docker-container-to-logstash-via-gelf-driver
  - https://www.docker.com/blog/adventures-in-gelf/
+ - https://blog.zenika.com/2016/02/15/consolider-les-logs-docker-dans-un-elk/
 
