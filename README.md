@@ -17,6 +17,8 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver
  - Index "logback-*"
 
+![alt tag](./media/index.PNG)
+
 ## URLs
 
  - API Swagger to add data (create some books) : http://localhost:8080/swagger-ui/index.html
