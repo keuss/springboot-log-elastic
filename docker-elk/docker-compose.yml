@@ -1,6 +1,22 @@
 version: '3.2'
 
 services:
+  book-api-service:
+    container_name: bookapi_container
+    build:
+      context: ../
+      dockerfile: Dockerfile.bookapi
+    restart: always
+    ports:
+      - 8080:8080
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://localhost:5000"
+        tag: "bookapi_app"
+    networks:
+      - elk
+
   elasticsearch:
     build:
       context: elasticsearch/
