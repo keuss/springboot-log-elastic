@@ -19,9 +19,13 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 
 ![alt tag](./media/index.PNG)
 
+ - Filter by tag (bookapi_app_1 or bookapi_app_2)
+
+![alt tag](./media/tag.PNG)
+
 ## URLs
 
- - API Swagger to add data (create some books) : http://localhost:8080/swagger-ui/index.html
+ - API Swagger to add data (create some books) : http://localhost:8080[2]/swagger-ui/index.html (2 apps)
  - Kibana : http://localhost:5601/ (elastic/changeme), add sample data first, then create logback-* index
 
 ## Links

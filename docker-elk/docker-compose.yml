@@ -1,11 +1,11 @@
 version: '3.2'
 
 services:
-  book-api-service:
-    container_name: bookapi_container
+  book-api-service-1:
+    container_name: bookapi_container_1
     build:
       context: ../
-      dockerfile: Dockerfile.bookapi
+      dockerfile: Dockerfile.bookapi-1
     restart: always
     ports:
       - 8080:8080
@@ -13,7 +13,23 @@ services:
       driver: gelf
       options:
         gelf-address: "udp://localhost:5000"
-        tag: "bookapi_app"
+        tag: "bookapi_app_1"
+    networks:
+      - elk
+
+  book-api-service-2:
+    container_name: bookapi_container_2
+    build:
+      context: ../
+      dockerfile: Dockerfile.bookapi-2
+    restart: always
+    ports:
+      - 8082:8082
+    logging:
+      driver: gelf
+      options:
+        gelf-address: "udp://localhost:5000"
+        tag: "bookapi_app_2"
     networks:
       - elk
 
