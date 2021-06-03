@@ -1,7 +1,5 @@
 # springboot-log-elastic
 
-springboot-log-elastic
-
 POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) (everything in docker)
 
 ## Run
