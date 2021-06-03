@@ -23,6 +23,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - https://www.baeldung.com/logback
  - https://github.com/logstash/logstash-logback-encoder
  - https://www.innoq.com/en/blog/structured-logging/ (nice feature like keyValue, ...)
+ - https://dev.to/anandsunderraman/json-logging-in-spring-boot-applications-2j33
 
 ### Send the Logs of a Java App to the Elastic Stack
 
