@@ -36,7 +36,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - https://www.baeldung.com/java-application-logs-to-elastic-stack	
  - https://medium.com/@ridwanfajar/send-your-container-logs-to-elk-elasticsearch-logstash-and-kibana-with-gelf-driver-7995714fbbad
 
-### GELF
+### Gelf
 
  - https://docs.docker.com/config/containers/logging/gelf/
  - https://stackoverflow.com/questions/44050803/unable-to-connect-docker-container-to-logstash-via-gelf-driver
