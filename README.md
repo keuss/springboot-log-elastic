@@ -6,7 +6,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 
  - git clone https://github.com/keuss/springboot-log-elastic
  - `mvn clean package`
- - `docker-compose build`
+ - `docker-compose build` (from docker-elk folder with the docker-compose.yml file)
  - `docker-compose up`
  - To shutdown the stack and remove all persisted data `docker-compose down -v`
 
