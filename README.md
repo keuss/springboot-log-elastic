@@ -23,6 +23,10 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 
 ![alt tag](./media/tag.PNG)
 
+ - Dashboard example with custom tag
+
+![alt tag](./media/dashboard.PNG)
+
 ## URLs
 
  - API Swagger to add data (create some books) : [app1](http://localhost:8080/swagger-ui/index.html) / [app2](http://localhost:8082/swagger-ui/index.html)
