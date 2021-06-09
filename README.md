@@ -1,6 +1,6 @@
 # springboot-log-elastic
 
-POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) (everything in docker)
+POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/)/logstash -> elasticsearch -> kibana (everything in docker)
 
 ## Run
 
