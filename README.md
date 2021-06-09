@@ -15,7 +15,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - [Logback](http://logback.qos.ch/) with [LogstashEncoder](https://github.com/logstash/logstash-logback-encoder)
  - [Elastic with docker](https://github.com/deviantony/docker-elk) with xpack.license basic
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver (UDP protocol and port 5000 to send messages from Docker services)
- - Index "logback-*"
+ - Index "logback-*" and time filter field name `@timestamp`
 
 ![alt tag](./media/index.PNG)
 
