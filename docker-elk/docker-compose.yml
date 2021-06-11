@@ -12,7 +12,7 @@ services:
     logging:
       driver: gelf
       options:
-        gelf-address: "udp://localhost:5000"
+        gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_1"
     networks:
       - elk
@@ -28,7 +28,7 @@ services:
     logging:
       driver: gelf
       options:
-        gelf-address: "udp://localhost:5000"
+        gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_2"
     networks:
       - elk
