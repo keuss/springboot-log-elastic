@@ -53,3 +53,9 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - https://www.docker.com/blog/adventures-in-gelf/
  - https://blog.zenika.com/2016/02/15/consolider-les-logs-docker-dans-un-elk/
 
+### Docker Port Binding
+
+ - https://docs.docker.com/config/containers/container-networking/
+ - https://betterprogramming.pub/how-does-docker-port-binding-work-b089f23ca4c8
+ - 0.0.0.0 vs localhost, se [here](https://stackoverflow.com/questions/47025647/localhost-vs-0-0-0-0-with-docker-on-mac-os) and [here](https://stackoverflow.com/questions/59179831/docker-app-server-ip-address-127-0-0-1-difference-of-0-0-0-0-ip), _using 0.0.0.0 to listen inside the docker application will work_
+
