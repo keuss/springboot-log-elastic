@@ -7,15 +7,19 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - git clone https://github.com/keuss/springboot-log-elastic
  - `mvn clean package`
  - `docker-compose build` (from docker-elk folder with the docker-compose.yml file)
- - `docker-compose up`
- - To shutdown the stack and remove all persisted data `docker-compose down -v`
+ - `docker-compose up` (from docker-elk folder with the docker-compose.yml file)
+ - To shutdown the stack and remove all persisted data `docker-compose down -v` (from docker-elk folder with the docker-compose.yml file)
 
 ## Stack
 
  - [Logback](http://logback.qos.ch/) with [LogstashEncoder](https://github.com/logstash/logstash-logback-encoder)
  - [Elastic with docker](https://github.com/deviantony/docker-elk) with xpack.license basic
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver (UDP protocol and port 5000 to send messages from Docker services)
- - Index "logback-*" and time filter field name `@timestamp`
+ - Add Index Pattern (from Home/Manage) : Index "logback-*" and time filter field name `@timestamp`
+
+## Search Query examples
+
+ - `tag : bookapi_app_2 AND logcontent.level : ERROR`
 
 ![alt tag](./media/index.PNG)
 
@@ -30,7 +34,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 ## URLs
 
  - API Swagger to add data (create some books) : [app1](http://localhost:8080/swagger-ui/index.html) / [app2](http://localhost:8082/swagger-ui/index.html)
- - Kibana : http://localhost:5601/ (elastic/changeme), add sample data first, then create logback-* index
+ - Kibana : http://localhost:5601/ (elastic/changeme), **add sample data first, then create logback-* index**
 
 ## Links
 
