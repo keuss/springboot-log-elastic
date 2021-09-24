@@ -17,10 +17,6 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver (UDP protocol and port 5000 to send messages from Docker services)
  - Add Index Pattern (from Home/Manage) : Index `"logback-*"` and time filter field name `@timestamp` (must have some data first for this index !)
 
-## Search Query examples
-
- - `tag : bookapi_app_2 AND logcontent.level : ERROR`
-
 ![alt tag](./media/index.PNG)
 
  - Filter by tag (bookapi_app_1 or bookapi_app_2)
@@ -30,6 +26,10 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - Dashboard example with custom tag
 
 ![alt tag](./media/dashboard.PNG)
+
+## Search Query examples
+
+ - `tag : bookapi_app_2 AND logcontent.level : ERROR`
 
 ## URLs
 
