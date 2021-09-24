@@ -56,6 +56,7 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Book add(@ApiParam(value = "Book to Add", required = true) @RequestBody Book book) {
+        // FIXME Generate random UUID here ! (Client must not sed this value)
         this.books.add(book);
         LOGGER.debug("book added", kv("book", book));
         return book;
