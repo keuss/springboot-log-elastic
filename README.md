@@ -1,21 +1,21 @@
 # springboot-log-elastic
 
-POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) / logstash -> elasticsearch -> kibana (everything in docker)
+POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) (7.13.0) / logstash -> elasticsearch -> kibana (everything in docker)
 
 ## Run
 
  - git clone https://github.com/keuss/springboot-log-elastic
  - `mvn clean package`
  - `docker-compose build` (from docker-elk folder with the docker-compose.yml file)
- - `docker-compose up`
- - To shutdown the stack and remove all persisted data `docker-compose down -v`
+ - `docker-compose up` (from docker-elk folder with the docker-compose.yml file)
+ - To shutdown the stack and remove all persisted data `docker-compose down -v` (from docker-elk folder with the docker-compose.yml file)
 
 ## Stack
 
  - [Logback](http://logback.qos.ch/) with [LogstashEncoder](https://github.com/logstash/logstash-logback-encoder)
  - [Elastic with docker](https://github.com/deviantony/docker-elk) with xpack.license basic
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver (UDP protocol and port 5000 to send messages from Docker services)
- - Index "logback-*" and time filter field name `@timestamp`
+ - Add Index Pattern (from Home/Manage) : Index `"logback-*"` and time filter field name `@timestamp` (must have some data first for this index !)
 
 ![alt tag](./media/index.PNG)
 
@@ -26,6 +26,10 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - Dashboard example with custom tag
 
 ![alt tag](./media/dashboard.PNG)
+
+## Search Query examples
+
+ - `tag : bookapi_app_2 AND logcontent.level : ERROR`
 
 ## URLs
 
