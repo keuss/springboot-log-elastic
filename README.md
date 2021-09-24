@@ -1,6 +1,6 @@
 # springboot-log-elastic
 
-POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) / logstash -> elasticsearch -> kibana (everything in docker)
+POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elastic.co/fr/) (7.13.0) / logstash -> elasticsearch -> kibana (everything in docker)
 
 ## Run
 
@@ -15,7 +15,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - [Logback](http://logback.qos.ch/) with [LogstashEncoder](https://github.com/logstash/logstash-logback-encoder)
  - [Elastic with docker](https://github.com/deviantony/docker-elk) with xpack.license basic
  - Logstash with [GELF](https://docs.docker.com/config/containers/logging/gelf/) log driver (UDP protocol and port 5000 to send messages from Docker services)
- - Add Index Pattern (from Home/Manage) : Index "logback-*" and time filter field name `@timestamp`
+ - Add Index Pattern (from Home/Manage) : Index `"logback-*"` and time filter field name `@timestamp` (must have some data first for this index !)
 
 ## Search Query examples
 
@@ -34,7 +34,7 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
 ## URLs
 
  - API Swagger to add data (create some books) : [app1](http://localhost:8080/swagger-ui/index.html) / [app2](http://localhost:8082/swagger-ui/index.html)
- - Kibana : http://localhost:5601/ (elastic/changeme), **add sample data first, then create logback-* index**
+ - Kibana : http://localhost:5601/ (elastic/changeme), add sample data first, then create logback-* index
 
 ## Links
 
