@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -60,10 +62,12 @@ public class BookController {
         UUID uuid = UUID.randomUUID();
         book.setId(uuid);
         this.books.add(book);
-        LOGGER.debug("book added {}", kv("bookId", uuid));
+        // Just for MDC test
+        String businessRef = Timestamp.from(Instant.now()).toString();
         // Mapped Diagnostic Context test
-        try (var ignored = MDC.putCloseable("bookTitle", book.getTitle())) {
-            LOGGER.debug("book saved");
+        try (var ignored = MDC.putCloseable("businessRef", businessRef)) {
+            // Also, multiple fields are supported, it is optional to use them in the message
+            LOGGER.debug("book added {}", kv("bookId", uuid));
         }
         return book;
     }
