@@ -63,11 +63,11 @@ public class BookController {
         book.setId(uuid);
         this.books.add(book);
         // Just for MDC test
-        String businessRef = Timestamp.from(Instant.now()).toString();
+        String businessRef = String.valueOf(Timestamp.from(Instant.now()).getTime());
         // Mapped Diagnostic Context test
         try (var ignored = MDC.putCloseable("businessRef", businessRef)) {
             // Also, multiple fields are supported, it is optional to use them in the message
-            LOGGER.debug("book added {}", kv("bookId", uuid));
+            LOGGER.debug("book created {}", kv("bookId", uuid));
         }
         return book;
     }
