@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -56,9 +57,14 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public Book add(@ApiParam(value = "Book to Add", required = true) @RequestBody Book book) {
-        // FIXME Generate random UUID here ! (Client must not sed this value)
+        UUID uuid = UUID.randomUUID();
+        book.setId(uuid);
         this.books.add(book);
-        LOGGER.debug("book added", kv("book", book));
+        LOGGER.debug("book added {}", kv("bookId", uuid));
+        // Mapped Diagnostic Context test
+        try (var ignored = MDC.putCloseable("bookTitle", book.getTitle())) {
+            LOGGER.debug("Order saved");
+        }
         return book;
     }
 }
