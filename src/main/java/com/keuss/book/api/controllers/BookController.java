@@ -63,7 +63,7 @@ public class BookController {
         LOGGER.debug("book added {}", kv("bookId", uuid));
         // Mapped Diagnostic Context test
         try (var ignored = MDC.putCloseable("bookTitle", book.getTitle())) {
-            LOGGER.debug("Order saved");
+            LOGGER.debug("book saved");
         }
         return book;
     }
