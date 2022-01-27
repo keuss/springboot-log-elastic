@@ -14,6 +14,8 @@ services:
       options:
         gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_1"
+    env_file:
+      - ../myapp-variables.env
     networks:
       - elk
 
@@ -30,6 +32,8 @@ services:
       options:
         gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_2"
+    env_file:
+      - ../myapp-variables.env
     networks:
       - elk
 

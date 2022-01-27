@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,9 @@ public class BookController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
+    @Value("${my.param}")
+    String param;
+
     public BookController() {
         this.books = new ArrayList<>();
         books.add(new Book(UUID.fromString("70b32248-c6ef-4bdb-b88a-db1f58b85e1b"), "lord of the rings 1", "J. R. R. Tolkien"));
@@ -40,6 +44,7 @@ public class BookController {
     @ApiOperation(value = "Get all Books")
     @GetMapping
     public List<Book> getAll() {
+        LOGGER.info("param [{}]", param);
         return this.books;
     }
 
