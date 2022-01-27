@@ -5,7 +5,7 @@ services:
     container_name: bookapi_container_1
     build:
       context: ../
-      dockerfile: Dockerfile.bookapi-1
+      dockerfile: Dockerfile.bookapi
     restart: always
     ports:
       - 8080:8080
@@ -15,7 +15,7 @@ services:
         gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_1"
     env_file:
-      - ../myapp-variables.env
+      - ../myapp1-variables.env
     networks:
       - elk
 
@@ -23,7 +23,7 @@ services:
     container_name: bookapi_container_2
     build:
       context: ../
-      dockerfile: Dockerfile.bookapi-2
+      dockerfile: Dockerfile.bookapi
     restart: always
     ports:
       - 8082:8082
@@ -33,7 +33,7 @@ services:
         gelf-address: "udp://0.0.0.0:5000"
         tag: "bookapi_app_2"
     env_file:
-      - ../myapp-variables.env
+      - ../myapp2-variables.env
     networks:
       - elk
 
