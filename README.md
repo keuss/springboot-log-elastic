@@ -57,6 +57,10 @@ POC with SpringBoot (2.5.0) simple API App with [Elastic stack](https://www.elas
  - https://www.docker.com/blog/adventures-in-gelf/
  - https://blog.zenika.com/2016/02/15/consolider-les-logs-docker-dans-un-elk/
 
+### Other Docker logging driver
+
+ - https://docs.docker.com/config/containers/logging/splunk/
+
 ### Docker Port Binding
 
  - https://docs.docker.com/config/containers/container-networking/
